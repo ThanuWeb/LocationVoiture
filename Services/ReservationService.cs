@@ -12,7 +12,6 @@ public class ReservationService
     public bool Ajouter(Reservation reservation, out string erreur)
     {
         erreur = "";
-
         if (reservation.DateFin < reservation.DateDebut)
         {
             erreur = "La date de fin doit être après la date de début.";
@@ -20,7 +19,6 @@ public class ReservationService
         }
         _context.Reservations.Add(reservation);
         _context.SaveChanges();
-
         return true;
     }
 }
