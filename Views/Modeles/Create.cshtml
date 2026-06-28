@@ -1,0 +1,17 @@
+@model projetLocation.Models.Modele
+
+<h1>Ajouter un modèle</h1>
+<form method="post">
+    <label>Nom</label>
+    <input asp-for="Nom" />
+    <br />
+    <label>Marque</label>
+    <select asp-for="MarqueId">
+        @foreach (var marque in ViewBag.Marques)
+        {
+            <option value="@marque.Id">@marque.Nom</option>
+        }
+    </select>
+    <br />
+    <button type="submit">Ajouter</button>
+</form>

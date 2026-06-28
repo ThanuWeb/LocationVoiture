@@ -1,0 +1,25 @@
+@model List<projetLocation.Models.Voiture>
+
+<h1>Voitures</h1>
+<a href="/Voitures/Create">Ajouter une voiture</a>
+<table border="1">
+    <tr>
+        <th>Immatriculation</th>
+        <th>Modèle</th>
+        <th>Marque</th>
+        <th>Actions</th>
+    </tr>
+@foreach (var v in Model)
+{
+    <tr>
+        <td>@v.Immatriculation</td>
+        <td>@v.Modele.Nom</td>
+        <td>@v.Modele.Marque.Nom</td>
+        <td>
+            <a href="/Voitures/Details/@v.Id">Détails</a> |
+            <a href="/Voitures/Edit/@v.Id">Modifier</a> |
+            <a href="/Voitures/Delete/@v.Id">Supprimer</a>
+        </td>
+    </tr>
+}
+</table>

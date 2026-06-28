@@ -1,0 +1,32 @@
+@model projetLocation.Models.Reservation
+
+<h1>Modifier réservation</h1>
+<div asp-validation-summary="All" style="color:red"></div>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Client</label><br />
+    <select asp-for="ClientId">
+        <option value="">-- choisir client --</option>
+        @foreach (var c in ViewBag.Clients)
+        {
+            <option value="@c.Id">@c.Nom @c.Prenom</option>
+        }
+    </select>
+    <br /><br />
+    <label>Voiture</label><br />
+    <select asp-for="VoitureId">
+        <option value="">-- choisir voiture --</option>
+        @foreach (var v in ViewBag.Voitures)
+        {
+            <option value="@v.Id">@v.Immatriculation</option>
+        }
+    </select>
+    <br /><br />
+    <label>Date début</label><br />
+    <input asp-for="DateDebut" type="date" />
+    <br /><br />
+    <label>Date fin</label><br />
+    <input asp-for="DateFin" type="date" />
+    <br /><br />
+    <button type="submit">Modifier</button>
+</form>

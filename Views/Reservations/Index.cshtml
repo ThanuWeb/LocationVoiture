@@ -1,0 +1,34 @@
+@model List<projetLocation.Models.Reservation>
+
+<h1>Liste des réservations</h1>
+<a href="/Reservations/Create">Ajouter une réservation</a>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Voiture</th>
+            <th>Modèle</th>
+            <th>Marque</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Client?.Nom @r.Client?.Prenom</td>
+            <td>@r.Voiture?.Immatriculation</td>
+            <td>@r.Voiture?.Modele?.Nom</td>
+            <td>@r.Voiture?.Modele?.Marque?.Nom</td>
+            <td>@r.DateDebut?.ToString("dd/MM/yyyy")</td>
+            <td>@r.DateFin?.ToString("dd/MM/yyyy")</td>
+            <td>
+                <a href="/Reservations/Edit/@r.Id">Modifier</a> |
+                <a href="/Reservations/Delete/@r.Id">Supprimer</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

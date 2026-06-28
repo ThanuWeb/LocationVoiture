@@ -1,0 +1,19 @@
+@model List<projetLocation.Models.Modele>
+
+<h1>Liste des modèles</h1>
+<a href="/Modeles/Create">Ajouter un modèle</a>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Marque</th>
+    </tr>
+@foreach (var m in Model)
+{
+    <tr>
+        <td>@m.Id</td>
+        <td>@m.Nom</td>
+        <td>@m.Marque.Nom</td>
+    </tr>
+}
+</table>
