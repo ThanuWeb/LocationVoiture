@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: locationvoiture-service
+
+spec:
+  selector:
+    app: locationvoiture
+
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+  type: NodePort

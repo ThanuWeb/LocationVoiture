@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: locationvoiture
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: locationvoiture
+
+  template:
+    metadata:
+      labels:
+        app: locationvoiture
+
+    spec:
+      containers:
+        - name: locationvoiture
+          image: locationvoiture
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
