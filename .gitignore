@@ -1,13 +1,17 @@
-# .NET build files
+# .NET build
 bin/
 obj/
 
 # Visual Studio
 .vs/
 
-# User-specific files
+# User files
 *.user
 *.suo
+
+# SQLite
+*.db
+!locatic.db
 
 # Logs
 *.log
