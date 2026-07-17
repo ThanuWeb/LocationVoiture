@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# SQLite locale
+*.db
+*.sqlite
+
+# Secrets
+.env
+*.secret
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Docker
+docker-compose.override.yml
