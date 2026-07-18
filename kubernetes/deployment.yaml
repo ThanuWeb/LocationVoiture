@@ -21,5 +21,15 @@ spec:
         - name: locationvoiture
           image: thanuweb/locationvoiture:latest
           imagePullPolicy: Always
+
           ports:
             - containerPort: 8080
+
+          volumeMounts:
+            - name: database-storage
+              mountPath: /app/data
+
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: locationvoiture-pvc
